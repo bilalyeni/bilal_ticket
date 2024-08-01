@@ -31,7 +31,7 @@ client.on('modalSubmit', async (modal) => {
     .addField(`**SEBEP:**`, `${Formatters.codeBlock('markdown', firstResponse) || "`BELİRTİLMEMİŞ`"}`)
     .setFooter(`TurkishLine Ticket Systems`)
         
-
+//tcopener.send({ embeds: [closed], files: [attachment]}).catch(() => {});
   client.channels.cache.get(logs.id).send({ embeds: [closed], files: [attachment]})
   }
 })
