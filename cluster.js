@@ -1,3 +1,4 @@
+const keep_alive = require('./keep_alive.js');
 const Cluster = require('discord-hybrid-sharding');
 const { Manager } = require("discord-hybrid-sharding");
 const totalShards = "auto";
