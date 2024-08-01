@@ -7,7 +7,7 @@
   "status": "idle",
   
   "COMMENT": "Only enable hostingweb if you are using replit!",
-  "hostingweb": false,
+  "hostingweb": true,
   
   "developers": ["821715152520609833"],
 
