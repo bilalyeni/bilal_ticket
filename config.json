@@ -1,0 +1,34 @@
+
+{  
+  "token": "OTg2NTk1NTc1MjA0MDI0MzMw.GhWCsN.CahMtHHRMXYCvsUVRWct7B6pZw_T4KfeCmgy9Y",
+  "prefix": "$",
+  "activity": "discord.gg/turkishline",
+  "type": "LISTENING",
+  "status": "idle",
+  
+  "COMMENT": "Only enable hostingweb if you are using replit!",
+  "hostingweb": false,
+  
+  "developers": ["821715152520609833"],
+
+  "clientPresence": "TurkishLine",
+  "clientLogo": "",
+  "clientFooter": "TurkishLine VTC • Sen ve ben değil, biz",
+
+
+
+  "color": {
+    "main"   : "#2b2d31",
+    "error"  : "#ff5f8e",
+    "success": "#99ff9c",
+
+    "red"   : "#2b2d31",
+    "orange": "#2b2d31",
+    "yellow": "#2b2d31",
+    "green" : "#2b2d31",
+    "purple": "#2b2d31",
+    "pink"  : "#2b2d31",
+    "grey"  : "#2b2d31",
+    "white" : "#2b2d31"
+  }
+}
