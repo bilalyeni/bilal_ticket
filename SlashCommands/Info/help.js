@@ -5,6 +5,7 @@ module.exports = {
     name: "help",
     description: "See all of the bots commands",
     type: 'CHAT_INPUT',
+    premium: true,
     run: async (client, interaction, args) => {
       /*let categories = [];
 

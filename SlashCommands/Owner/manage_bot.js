@@ -3,35 +3,36 @@ const Discord = require(`discord.js`)
 const glob = require("glob")
 module.exports = {
     name: "manage_bot",
-    description: "Manage the bot",
+    description: "Botu yönetin",
     type: 'CHAT_INPUT',
+    premium: true,
     
     run: async (client, interaction, args) => {
 
-      if(!client.config.developers.includes(interaction.user.id)) return interaction.followUp(`🔒 You must be an owner to use this command!`)
+      if(!client.config.developers.includes(interaction.user.id)) return interaction.followUp(`🔒 **Bu komut sadece Bilal'e özeldir!**`)
 
       
         let clientapp = client.application ? await client.application.fetch().catch(e => false) : false;
-    let guild = client.guilds.cache.get("895398888113049631")
+    let guild = client.guilds.cache.get("905075946426613760")
     
     const control = new Discord.MessageEmbed()
       .setColor(client.config.color.main)
       .setAuthor(`${client.user.username} | Bot-Control-Panel`, client.user.displayAvatarURL())
-      .setDescription(`<a:bluebouncearrow:948357312500867082> **Bot-File-Path:**
+      .setDescription(`<a:pingpong:906791053170987028> **Bot-File-Path:**
 \`\`\`yml
 ${process.cwd()}
 \`\`\`
-<a:bluebouncearrow:948357312500867082> **Host-Server:**
+<a:pingpong:906791053170987028> **Host-Server:**
 \`\`\`yml
 ${String(Object.values(require(`os`).networkInterfaces()).reduce((r, list) => r.concat(list.reduce((rr, i) => rr.concat(i ?.family === `IPv4` && !i ?.internal && i ?.address || []), [])), [])).split(".")[3]} IPv4
 \`\`\`
-${clientapp ? `<a:bluebouncearrow:948357312500867082> **Bot-Application-Information:**
+${clientapp ? `<a:pingpong:906791053170987028> **Bot-Application-Information:**
 \`\`\`yml
 Bot Username: ${clientapp.name} 
 ${clientapp.owner.discriminator ? "Application-Owner: " + clientapp.owner.tag : "Application-Team: " + clientapp.owner.name + "\nApplication-Members: " + clientapp.owner.members.map(uid => `${uid.user.tag}`).join(", ") + "\nTeam-Owner: " + `${guild.members.cache.get(clientapp.owner.ownerId) && guild.members.cache.get(clientapp.owner.ownerId).user ? guild.members.cache.get(clientapp.owner.ownerId).user.tag : clientapp.owner.ownerId}`} 
 Icon: ${clientapp.iconURL()}
 \`\`\`
-<a:bluebouncearrow:948357312500867082> **About me:**
+<a:pingpong:906791053170987028> **About me:**
 \`\`\`yml
 ${clientapp.description ? clientapp.description : "❌ NO DESCRIPTION YET!"}
 \`\`\``
@@ -45,7 +46,7 @@ ${clientapp.description ? clientapp.description : "❌ NO DESCRIPTION YET!"}
 			  .setCustomId('manage_bot')
 			  .setPlaceholder(`Manage The "Premium Tc Bot" ${client.user.username}`)
 			  .addOptions([
-          { label: `Shutdown Bot`, description: `Shutdown the bot incase of emergencies!`, value: `stop_client`, emoji: `934152965856591953` },
+          { label: `Shutdown Bot`, description: `Shutdown the bot incase of emergencies!`, value: `stop_client`, emoji: `905426273952739329` },
           { label: `Rename Bot`, description: `Rename the Discord Bot to your chosen one!`, value: `rename_client`, emoji: `📝` },
           { label: `Change Avatar`, description: `Change the Discord Bot's Avatar to a new one!`, value: `changeav_client`, emoji: `📸` },
         ]),

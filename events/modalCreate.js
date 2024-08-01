@@ -13,9 +13,9 @@ client.on('modalSubmit', async (modal) => {
                     
         const embed = new MessageEmbed()
         .setColor(client.config.color.purple)
-        .setTitle(`<a:Loading:920516789883002880> Deleting the Ticket...`)
-        .setDescription(`*The ticket will be deleted in about 5 seconds!*`)
-        .setFooter(`Action by ${modal.user.username}\n🔷 On Shard: ${modal.guild.shardId}`, modal.guild.iconURL())
+        .setTitle(`${client.emoji.loading} Deleting the Ticket...`)
+        .setDescription(`*Bilet yaklaşık 5 saniye içinde silinecektir!*`)
+        .setFooter({text: client.config.clientFooter, iconURL: client.config.clientLogo })
 
         modal.reply({ embeds: [embed] })
             setTimeout(() => {
@@ -24,15 +24,14 @@ client.on('modalSubmit', async (modal) => {
     
         const tcopener = modal.guild.members.cache.get(opener.id)
         const closed = new MessageEmbed()
-    .setTitle(`${client.emoji.manage} | TICKET DELETED`)
-          .setColor(`WHITE`)
-          .addField(`**TICKET OPENER:**`, `\`\`\`\n${tcopener.user.tag} (${tcopener.user.id})\n\`\`\``)
-    .addField(`**DELETED BY:**`, `\`\`\`\n${modal.user.tag} (${modal.user.id})\n\`\`\``)
-    .addField(`**DELETE REASON:**`, `${Formatters.codeBlock('markdown', firstResponse) || "`NO REASON ADDED`"}`)
-    .setFooter(`TRANSCRIPT IS ATTATCHED TO THE MESSAGE!`)
+    .setTitle(`${client.emoji.manage} | TICKET KAPATILDI`)
+          .setColor(`#2b2d30`)
+          .addField(`**TARAFINDAN AÇILDI:**`, `<@${tcopener.user.id}>\`\`\`\n${tcopener.user.username}(${tcopener.user.id})\n\`\`\``)
+    .addField(`**TARAFINDAN KAPATILDI:**`, `<@${modal.user.id}>\`\`\`\n${modal.user.username}(${modal.user.id})\n\`\`\``)
+    .addField(`**SEBEP:**`, `${Formatters.codeBlock('markdown', firstResponse) || "`BELİRTİLMEMİŞ`"}`)
+    .setFooter(`TurkishLine Ticket Systems`)
         
 
-    tcopener.send({ embeds: [closed], files: [attachment]}).catch(() => {});
-    client.channels.cache.get(logs.id).send({ embeds: [closed], files: [attachment]})
+  client.channels.cache.get(logs.id).send({ embeds: [closed], files: [attachment]})
   }
 })

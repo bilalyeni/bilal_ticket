@@ -19,7 +19,7 @@ client.on("interactionCreate", async (interaction) => {
         const expiration_time = time_stamps.get(interaction.user.id) + cooldown_amount;
         if (current_time < expiration_time) {
           const time_left = (expiration_time - current_time) / 1000;
-          const embed = new MessageEmbed().setColor("RED").setTitle(`${client.emoji.wrong} Too Fast!`).setDescription(`**You are in a cooldown! Please wait \`${time_left.toFixed(1)}\` seconds, To Use the command, \`${cmd.name}\` Again**!`).setFooter(`Powered by Azury.live`)
+          const embed = new MessageEmbed().setColor("RED").setTitle(`${client.emoji.wrong} Çok hızlısın!`).setDescription(`**You are in a cooldown! Please wait \`${time_left.toFixed(1)}\` seconds, To Use the command, \`${cmd.name}\` Again**!`).setFooter(`Powered by Bilal`)
           return interaction.reply({ embeds: [embed] });
         }
       }
