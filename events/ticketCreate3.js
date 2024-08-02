@@ -23,7 +23,7 @@ if(!interaction.isButton() && !interaction.isSelectMenu()) return;
 
       if(interaction.customId == `create_ticket${s}`) {
           const tcname = db.fetch(`ticketname_${interaction.guild.id}`)
-                       //.replace(/{user}/g, interaction.user.username)
+                       .replace(/{user}/g, interaction.user.username)
                        
         console.log("Ticket Creation - GUILD: "+interaction.guild.name+" | OPENER: "+interaction.user.tag+"".green.dim)
         if(!interaction.guild.me.permissions.has("MANAGE_CHANNELS")) return interaction.reply({ content: `${client.emoji.wrong} **I couldnt Create the ticket!**\n> *Make sure that i have the \`MANAGE_CHANNELS\` permission!*`, ephemeral: true })

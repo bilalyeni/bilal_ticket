@@ -83,4 +83,3 @@ await client.application.commands.set(arrayOfSlashCommands).then((slashCommandsD
   */
   
 }
-
