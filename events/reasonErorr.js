@@ -1,7 +1,7 @@
 const client = require("../index.js")
 client.on("interactionCreate", async (interaction) => {
   if(interaction.customId == "error_reasons") {
-    interaction.reply({ content: "**Here might be the reasons for the ErrCode: \`hHa_8\`**\n```\n[-] Admin Role Might have Been Deleted / Bot Can't Access the Role\n[-] Ticket Category Might be Deleted\n[-] Database had an Error And Didnt Save Admin Role\n[+] If None of these Reasons are why, DM Masterious#0001 (693553429380857978)\n```", ephemeral: true })
+    interaction.reply({ content: "**ErrCode'un nedenleri: \`hHa_8\`**\n``\n[-] Yönetici Rolü Silinmiş Olabilir / Bot Role Erişemiyor\n[-] Bilet Kategorisi Silinmiş Olabilir\n[-] Veritabanı Hata Verdi ve Yönetici Rolünü Kaydetmedi\n[+] Bu Nedenlerden Hiçbiri Neden Değilse, DM bilalyeniofficial (821715152520609833)\n```", ephemeral: true })
   }
 })
 // Dont Remove my Username and Tag, as if there is ERRORs, I'll probs Know a FIX.
