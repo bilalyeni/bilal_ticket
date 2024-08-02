@@ -153,13 +153,13 @@ process.on('unhandledRejection', (reason, p) => {
     console.log('=== multiple Resolves ===\n\n\n\n\n'.toUpperCase().red.dim);
   });
 
-const { joinVoiceChannel } = require('@discordjs/voice');
- client.on('ready', () => { 
-  joinVoiceChannel({
-channelId: "1266545404732899371",
-guildId: "1266545403994837125",       
-adapterCreator: client.guilds.cache.get("1266545403994837125").voiceAdapterCreator,
-          selfDeaf:true,
-          selfMute:true
-    });
-});
+  const { joinVoiceChannel } = require('@discordjs/voice');
+  client.on('ready', () => { 
+   joinVoiceChannel({
+ channelId: "1225105919088660540",
+ guildId: "1048314037261324328",       
+ adapterCreator: client.guilds.cache.get("1048314037261324328").voiceAdapterCreator,
+           selfDeaf:true,
+           selfMute:true
+     });
+ });
