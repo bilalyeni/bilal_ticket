@@ -2,6 +2,7 @@ const Cluster = require('discord-hybrid-sharding');
 const { Manager } = require("discord-hybrid-sharding");
 const totalShards = "auto";
 const colors = require("colors");
+const clientconfig = require("./config.json");
 const shardsPerCluster = 1;
 const manager = new Cluster.Manager(`./index.js`, {
     totalShards: totalShards, // Use 'auto' if u want it to be Auto.
