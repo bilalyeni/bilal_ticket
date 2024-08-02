@@ -40,7 +40,7 @@ if(!interaction.isButton() && !interaction.isSelectMenu()) return;
                 const reasons = new MessageActionRow()
         .addComponents([
           new MessageButton()
-          .setLabel(`View Possible Reasons`)
+          .setLabel(`Olası Nedenleri Görüntüleyin`)
           .setStyle(`PRIMARY`)
           .setCustomId(`error_reasons`)
           
@@ -63,7 +63,7 @@ if(!interaction.isButton() && !interaction.isSelectMenu()) return;
                     parent: cat,
                     topic: `📨 Ticket for: ${interaction.user.tag} (${interaction.user.id})`
                 }).catch(() => {
-          interaction.editReply({ content: `${client.emoji.wrong} **An Error Occured While Creating Your Ticket!**\n> *ErrCode: \`hHa_8\`*`, components: [reasons], ephemeral: true })
+          interaction.editReply({ content: `${client.emoji.wrong} **Biletiniz oluşturulurken bir hata oluştu!**\n> *ErrCode: \`hHa_8\`*`, components: [reasons], ephemeral: true })
                 }).then(async function(channel) {
                   db.set(`Ticketopener_${channel.id}`, interaction.user);
                 await wait(1000)
